@@ -12,6 +12,19 @@
   <!-- Bootstrap Icons CDN -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+<!-- Bootstrap JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="../../dist/css/style.css">
@@ -26,13 +39,13 @@
         <img src="../../dist/img/logo.png" alt="AdminLTE Logo" class="brand-image">
       </a>
 
-      <!-- <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button> -->
+      </button>
 
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <div class="navbar-nav">
-          <button>Filter<i class="bi bi-sort-down"></i></button>
+          <button data-toggle="modal" data-target="#filterDialog">Filter<i class="bi bi-sort-down"></i></button>
           <button>Add New<i class="bi bi-building-add"></i></button>
           <button>Download Excel<i class="bi bi-box-arrow-down"></i></button>
         </div>
@@ -98,9 +111,82 @@
     <!-- <div class="float-right d-none d-sm-inline">
       Anything you want
     </div> -->
-    Copyright &copy; 2025 <strong><a href="https://adminlte.io">Brickkly Real Estate Solutions</a></strong>. All Rights Reserved.
+    Copyright &copy; 2025 <strong><a href="">Brickkly Real Estate Solutions</a></strong>. All Rights Reserved.
   </footer>
 </div>
+
+
+
+
+
+
+
+
+<!-- Filter Dialog -->
+<!-- Modal -->
+<div class="modal fade" id="filterDialog" tabindex="-1" role="dialog" aria-labelledby="filterDialogLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-2">
+      
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="filterDialogLabel">Filters</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-person-fill mr-2"></i>
+            <input type="text" class="form-control rounded" placeholder="Name">
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-telephone-fill mr-2"></i>
+            <input type="text" class="form-control rounded" placeholder="Mobile">
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-calendar-plus mr-2"></i>
+            <input type="text" class="form-control rounded" placeholder="Created At">
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-calendar-check-fill mr-2"></i>
+            <input type="text" class="form-control rounded" placeholder="Follow Update">
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-person-badge-fill mr-2"></i>
+            <select class="form-control rounded">
+              <option selected disabled>Lead Assign To</option>
+              <option>Admin 1</option>
+              <option>Admin 2</option>
+              <option>Admin 3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer d-flex justify-content-between">
+        <div>
+          <button type="button" class="btn button-close" data-dismiss="modal">Close</button>
+          <button type="button" class="btn button-clear">Clear Filter</button>
+        </div>
+        <div>
+          <button type="button" class="btn button-apply">Apply</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 
 
@@ -116,7 +202,7 @@
 
 
 
-
+<!-- card data and pagination -->
 <script>
   const cardData = new Array(20).fill(null).map((_, i) => ({
     id: i + 1,
