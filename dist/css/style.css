@@ -245,15 +245,28 @@ label:not(.form-check-label):not(.custom-file-label) {
 
 
 
-
+.modal-footer .btn {
+    padding: 4px 20px;
+    border-radius: 3px;
+}
 .modal-footer .button-close{
     background: #cacaca;
+}
+.modal-footer .button-close:hover {
+    background: #a1a1a1;
 }
 .modal-footer .button-clear{
     background: #e1c5b9;
     margin-left: 4px;
 }
+.modal-footer .button-clear:hover {
+    background: #cf6537;
+    color: #fff;
+}
 .modal-footer .button-apply{
     background: #D49A82;
     color: #fff;
+}
+.modal-footer .button-apply:hover {
+    background: #cf6537;
 }
