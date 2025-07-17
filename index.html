@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brickkly - Admin</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+
+
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+      <a href="../../index.html" class="navbar-brand">
+        <img src="../../dist/img/logo.png" alt="AdminLTE Logo" class="brand-image">
+      </a>
+
+      <!-- <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <div class="navbar-nav">
+          <button>Filter<i class="bi bi-sort-down"></i></button>
+          <button>Add New<i class="bi bi-building-add"></i></button>
+          <button>Download Excel<i class="bi bi-box-arrow-down"></i></button>
+        </div>
+
+        <div class="ml-auto navbar-right">
+          <button><i class="bi bi-person-circle"></i><span>Logout</span></button>
+          <button><i class="bi bi-bell-fill"></i></button>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <div class="content-wrapper">
+
+    <div class="content-tags">
+      <button>New [ <span>10</span> ]</button>
+      <button>Progress [ <span>20</span> ]</button>
+      <button>Close [ <span>30</span> ]</button>
+    </div>
+
+    <div class="content-tags">
+      <label>
+        <input type="checkbox" name="" value="cold" />
+        Cold [ <span>10</span> ]
+      </label>
+
+      <label>
+        <input type="checkbox" name="" value="hot" />
+        Hot [ <span>20</span> ]
+      </label>
+
+      <label>
+        <input type="checkbox" name="" value="warm" />
+        Warm [ <span>30</span> ]
+      </label>
+    </div>
+
+
+    <div class="content">
+      <div class="container">
+        <div class="row" id="card-container">
+          <!-- card content will apear here dynamic -->
+        </div>
+
+
+        <!-- Pagination -->
+        <div class="pagination-box">
+          <button id="prevPage"><i class="bi bi-chevron-left"></i></button>
+          <div id="pagination-numbers"></div>
+          <button id="nextPage"><i class="bi bi-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <footer class="main-footer">
+    <!-- <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div> -->
+    Copyright &copy; 2025 <strong><a href="https://adminlte.io">Brickkly Real Estate Solutions</a></strong>. All Rights Reserved.
+  </footer>
+</div>
+
+
+
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="../../dist/js/demo.js"></script> -->
+
+
+
+
+<script>
+  const cardData = new Array(20).fill(null).map((_, i) => ({
+    id: i + 1,
+    name: `Person ${i + 1}`,
+    location: `Location ${i + 1}`,
+    time: `Thu 17 July 2025 | 05:15 AM`,
+    phone: `98765432${(10 + i).toString().slice(-2)}`,
+    area: `${4000 + i * 100} sqft`
+  }));
+
+  const cardsPerPage = 12;
+  let currentPage = 1;
+
+  const container = document.getElementById("card-container");
+  const pagination = document.getElementById("pagination-numbers");
+  const prevBtn = document.getElementById("prevPage");
+  const nextBtn = document.getElementById("nextPage");
+
+  function displayCards(page) {
+    container.innerHTML = "";
+    const start = (page - 1) * cardsPerPage;
+    const end = start + cardsPerPage;
+    const pageCards = cardData.slice(start, end);
+
+    pageCards.forEach((card) => {
+      container.innerHTML += `
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-head">
+                <div class="card-head-left">
+                  <div><i class="bi bi-clock-fill"></i></div>
+                  <h5 class="card-title">${card.time}</h5>
+                </div>
+                <div class="card-head-right">
+                  <button>STATUS</button>
+                </div>
+              </div>
+
+              <div class="card-head-left">
+                <div><i class="bi bi-geo-alt-fill"></i></div>
+                <h5 class="card-title">${card.location}</h5>
+              </div>
+
+              <div class="card-head card-name">
+                <div class="card-head-left">
+                  <div><i class="bi bi-person-fill"></i></div>
+                  <h5 class="card-title">${card.name}</h5>
+                </div>
+                <div class="card-head-left">
+                  <div><i class="bi bi-telephone-fill"></i></div>
+                  <h5 class="card-title">${card.phone}</h5>
+                </div>
+              </div>
+
+              <div class="card-head-left">
+                <div><i class="bi bi-arrows-fullscreen"></i></div>
+                <h5 class="card-title">${card.area}</h5>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button>ASSIGN</button>
+              <button>VIEW DETAIL</button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  function setupPagination() {
+    pagination.innerHTML = "";
+    const totalPages = Math.ceil(cardData.length / cardsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const span = document.createElement("span");
+      span.textContent = i;
+      if (i === currentPage) span.classList.add("active");
+      span.addEventListener("click", () => {
+        currentPage = i;
+        update();
+      });
+      pagination.appendChild(span);
+    }
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+  }
+
+  function update() {
+    displayCards(currentPage);
+    setupPagination();
+  }
+
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      update();
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentPage < Math.ceil(cardData.length / cardsPerPage)) {
+      currentPage++;
+      update();
+    }
+  });
+
+  // Initial render
+  update();
+</script>
+
+
+
+
+
+</body>
+</html>
