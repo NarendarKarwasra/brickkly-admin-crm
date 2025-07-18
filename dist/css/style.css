@@ -362,6 +362,11 @@ label:not(.form-check-label):not(.custom-file-label) {
 
 /* card detail page css */
 
+
+.top-card{
+    margin-bottom: 0;
+}
+
 .follow-quality-row {
     display: flex;
     align-items: center;
