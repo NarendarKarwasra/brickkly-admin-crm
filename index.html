@@ -65,8 +65,8 @@
 
     <div class="content-tags">
       <button>New [ <span>10</span> ]</button>
-      <button>Progress [ <span>20</span> ]</button>
-      <button>Close [ <span>30</span> ]</button>
+      <button data-toggle="modal" data-target="#progressDialog">Progress [ <span>20</span> ]</button>
+      <button data-toggle="modal" data-target="#closeDialog">Close [ <span>30</span> ]</button>
     </div>
 
     <div class="content-tags">
@@ -175,6 +175,166 @@
         </div>
         <div>
           <button type="button" class="btn button-apply">Apply</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- progress dialog -->
+<div class="modal fade" id="progressDialog" tabindex="-1" role="dialog" aria-labelledby="progressDialogLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered progress-popup-full" role="document">
+    <div class="modal-content p-2">
+      
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="progressDialogLabel">Progress Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="row">
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Assigned
+            <span class="check-count">12</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Non-Contactable
+            <span class="check-count">6</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            First Follow up
+            <span class="check-count">15</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Detail Shared
+            <span class="check-count">17</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Detail Explained
+            <span class="check-count">13</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Zoom Meet Aligned
+            <span class="check-count">7</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Zoom Meet Done
+            <span class="check-count">6</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer d-flex justify-content-between">
+        <div>
+          <button type="button" class="btn button-clear">Select All</button>
+        </div>
+        <div>
+          <button type="button" class="btn button-apply">Submit</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- close dialog -->
+<div class="modal fade" id="closeDialog" tabindex="-1" role="dialog" aria-labelledby="closeDialogLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered progress-popup-full" role="document">
+    <div class="modal-content p-2">
+      
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="closeDialogLabel">Closing Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="row">
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Closing tag 1
+            <span class="check-count">12</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Closing tag 2
+            <span class="check-count">6</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Closing tag 3
+            <span class="check-count">15</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Closing tag 4
+            <span class="check-count">17</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Closing tag 5
+            <span class="check-count">13</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Closing tag 6
+            <span class="check-count">7</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            Closing tag 7
+            <span class="check-count">6</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer d-flex justify-content-between">
+        <div>
+          <button type="button" class="btn button-clear">Select All</button>
+        </div>
+        <div>
+          <button type="button" class="btn button-apply">Submit</button>
         </div>
       </div>
 
