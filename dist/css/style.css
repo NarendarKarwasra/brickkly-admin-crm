@@ -136,11 +136,9 @@ label:not(.form-check-label):not(.custom-file-label) {
 }
 
 .card-head-right button{
-    /* background: #D49A82; */
     background: #f3e3db;
     padding: 0px 10px;
     border-radius: 2px;
-    /* color: #fff; */
     color: #454545;
     border: none;
     font-weight: 500;
@@ -152,7 +150,6 @@ label:not(.form-check-label):not(.custom-file-label) {
     justify-content: left;
 }
 .card-name .card-title {
-    /* color: #376fc2; */
     color: #cf6537;
 }
 .card-name .card-head-left {
@@ -168,7 +165,6 @@ label:not(.form-check-label):not(.custom-file-label) {
     background: #f4edeb;
 }
 .card-footer button{
-    /* background: #f1dacf; */
     background: #f3e3db;
     border: none;
     border-radius: 2px;
