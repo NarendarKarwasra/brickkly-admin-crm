@@ -46,7 +46,7 @@
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <div class="navbar-nav">
           <button data-toggle="modal" data-target="#filterDialog">Filter<i class="bi bi-sort-down"></i></button>
-          <button>Add New<i class="bi bi-building-add"></i></button>
+          <button data-toggle="modal" data-target="#addDialog">Add New<i class="bi bi-building-add"></i></button>
           <button>Download Excel<i class="bi bi-box-arrow-down"></i></button>
         </div>
 
@@ -70,19 +70,23 @@
     </div>
 
     <div class="content-tags">
-      <label>
+      <label class="custom-checkbox">
         <input type="checkbox" name="" value="cold" />
-        Cold [ <span>10</span> ]
+        <span class="checkmark"></span>
+        Cold
+        <span class="check-count">[ 12 ]</span>
       </label>
-
-      <label>
+      <label class="custom-checkbox">
         <input type="checkbox" name="" value="hot" />
-        Hot [ <span>20</span> ]
+        <span class="checkmark"></span>
+        Hot
+        <span class="check-count">[ 20 ]</span>
       </label>
-
-      <label>
+      <label class="custom-checkbox">
         <input type="checkbox" name="" value="warm" />
-        Warm [ <span>30</span> ]
+        <span class="checkmark"></span>
+        Warm
+        <span class="check-count">[ 30 ]</span>
       </label>
     </div>
 
@@ -108,9 +112,6 @@
 
 
   <footer class="main-footer">
-    <!-- <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div> -->
     Copyright &copy; 2025 <strong><a href="">Brickkly Real Estate Solutions</a></strong>. All Rights Reserved.
   </footer>
 </div>
@@ -188,6 +189,82 @@
 
 
 
+<!-- add new dialog -->
+<div class="modal fade" id="addDialog" tabindex="-1" role="dialog" aria-labelledby="addDialogLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-2">
+      
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="addDialogLabel">Add New Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="d-flex align-items-center mb-3 input-row">
+            <div>Name</div>
+            <input type="text" class="form-control rounded" placeholder="Enter Your Name">
+          </div>
+          <div class="d-flex align-items-center mb-3 input-row">
+            <div>Mobile No.</div>
+            <input type="text" class="form-control rounded" placeholder="Enter Your Mobile No.">
+          </div>
+          <div class="d-flex align-items-center mb-3 input-row">
+            <div>Preferred Location</div>
+            <input type="text" class="form-control rounded" placeholder="Enter Preferred Location">
+          </div>
+          <div class="d-flex align-items-center mb-3 input-row">
+            <div>Property Type</div>
+            <select class="form-control rounded">
+              <option selected disabled>Select Property Type</option>
+              <option>Commercial</option>
+              <option>Residential</option>
+            </select>
+          </div>
+          <div class="d-flex align-items-center mb-3 input-row">
+            <div>Area (sqft)</div>
+            <select class="form-control rounded">
+              <option selected disabled>Select Area</option>
+              <option>500 - 1000</option>
+              <option>1000 - 2500</option>
+              <option>2500+</option>
+            </select>
+          </div>
+          <div class="d-flex align-items-center mb-3 input-row">
+            <div>Price</div>
+            <select class="form-control rounded">
+              <option selected disabled>Select Price</option>
+              <option>Under 1 Cr</option>
+              <option>1 Cr - 3 Cr</option>
+              <option>3 Cr+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer d-flex justify-content-between">
+        <div>
+          <button type="button" class="btn button-close" data-dismiss="modal">Close</button>
+        </div>
+        <div>
+          <button type="button" class="btn button-apply">Submit</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <!-- progress dialog -->
 <div class="modal fade" id="progressDialog" tabindex="-1" role="dialog" aria-labelledby="progressDialogLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered progress-popup-full" role="document">
@@ -208,43 +285,43 @@
             <input type="checkbox" />
             <span class="checkmark"></span>
             Assigned
-            <span class="check-count">12</span>
+            <span class="check-count">[ 12 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Non-Contactable
-            <span class="check-count">6</span>
+            <span class="check-count">[ 6 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             First Follow up
-            <span class="check-count">15</span>
+            <span class="check-count">[ 15 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Detail Shared
-            <span class="check-count">17</span>
+            <span class="check-count">[ 17 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Detail Explained
-            <span class="check-count">13</span>
+            <span class="check-count">[ 13 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Zoom Meet Aligned
-            <span class="check-count">7</span>
+            <span class="check-count">[ 7 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Zoom Meet Done
-            <span class="check-count">6</span>
+            <span class="check-count">[ 6 ]</span>
           </label>
         </div>
       </div>
@@ -252,7 +329,7 @@
       <!-- Footer -->
       <div class="modal-footer d-flex justify-content-between">
         <div>
-          <button type="button" class="btn button-clear">Select All</button>
+          <button type="button" class="btn button-clear progress-button-clear">Select All</button>
         </div>
         <div>
           <button type="button" class="btn button-apply">Submit</button>
@@ -287,43 +364,43 @@
             <input type="checkbox" />
             <span class="checkmark"></span>
             Closing tag 1
-            <span class="check-count">12</span>
+            <span class="check-count">[ 12 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Closing tag 2
-            <span class="check-count">6</span>
+            <span class="check-count">[ 6 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Closing tag 3
-            <span class="check-count">15</span>
+            <span class="check-count">[ 15 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Closing tag 4
-            <span class="check-count">17</span>
+            <span class="check-count">[ 17 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Closing tag 5
-            <span class="check-count">13</span>
+            <span class="check-count">[ 13 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Closing tag 6
-            <span class="check-count">7</span>
+            <span class="check-count">[ 7 ]</span>
           </label>
           <label class="custom-checkbox">
             <input type="checkbox" />
             <span class="checkmark"></span>
             Closing tag 7
-            <span class="check-count">6</span>
+            <span class="check-count">[ 6 ]</span>
           </label>
         </div>
       </div>
@@ -331,7 +408,7 @@
       <!-- Footer -->
       <div class="modal-footer d-flex justify-content-between">
         <div>
-          <button type="button" class="btn button-clear">Select All</button>
+          <button type="button" class="btn button-clear progress-button-clear">Select All</button>
         </div>
         <div>
           <button type="button" class="btn button-apply">Submit</button>
@@ -382,57 +459,66 @@
   const nextBtn = document.getElementById("nextPage");
 
   function displayCards(page) {
-    container.innerHTML = "";
-    const start = (page - 1) * cardsPerPage;
-    const end = start + cardsPerPage;
-    const pageCards = cardData.slice(start, end);
+  container.innerHTML = "";
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+  const pageCards = cardData.slice(start, end);
 
-    pageCards.forEach((card) => {
-      container.innerHTML += `
-        <div class="col-lg-4">
-          <div class="card">
-            <div class="card-body">
-              <div class="card-head">
-                <div class="card-head-left">
-                  <div><i class="bi bi-clock-fill"></i></div>
-                  <h5 class="card-title">${card.time}</h5>
-                </div>
-                <div class="card-head-right">
-                  <button>STATUS</button>
-                </div>
-              </div>
-
-              <div class="card-head-left">
-                <div><i class="bi bi-geo-alt-fill"></i></div>
-                <h5 class="card-title">${card.location}</h5>
-              </div>
-
-              <div class="card-head card-name">
-                <div class="card-head-left">
-                  <div><i class="bi bi-person-fill"></i></div>
-                  <h5 class="card-title">${card.name}</h5>
-                </div>
-                <div class="card-head-left">
-                  <div><i class="bi bi-telephone-fill"></i></div>
-                  <h5 class="card-title">${card.phone}</h5>
-                </div>
-              </div>
-
-              <div class="card-head-left">
-                <div><i class="bi bi-arrows-fullscreen"></i></div>
-                <h5 class="card-title">${card.area}</h5>
-              </div>
+  pageCards.forEach((card) => {
+    const cardElement = document.createElement('div');
+    cardElement.className = "col-lg-4";
+    cardElement.innerHTML = `
+      <div class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <div class="card-head-left d-flex align-items-center">
+              <div><i class="bi bi-clock-fill mr-2"></i></div>
+              <h5 class="card-title mb-0">${card.time}</h5>
             </div>
-            <div class="card-footer">
-              <button>ASSIGN</button>
-              <button>VIEW DETAIL</button>
+            <div class="card-head-right">
+              <button>STATUS</button>
             </div>
           </div>
-        </div>
-      `;
-    });
-  }
 
+          <div class="card-head-left d-flex align-items-center mt-2">
+            <div><i class="bi bi-geo-alt-fill mr-2"></i></div>
+            <h5 class="card-title mb-0">${card.location}</h5>
+          </div>
+
+          <div class="card-head card-name mt-2">
+            <div class="card-head-left d-flex align-items-center">
+              <div><i class="bi bi-person-fill mr-2"></i></div>
+              <h5 class="card-title mb-0">${card.name}</h5>
+            </div>
+            <div class="card-head-left d-flex align-items-center">
+              <div><i class="bi bi-telephone-fill mr-2"></i></div>
+              <h5 class="card-title mb-0">${card.phone}</h5>
+            </div>
+          </div>
+
+          <div class="card-head-left d-flex align-items-center mt-2">
+            <div><i class="bi bi-arrows-fullscreen mr-2"></i></div>
+            <h5 class="card-title mb-0">${card.area}</h5>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button>ASSIGN</button>
+          <button class="view-detail-btn btn btn-link">VIEW DETAIL</button>
+        </div>
+      </div>
+    `;
+
+    // Add click event for VIEW DETAIL
+    cardElement.querySelector('.view-detail-btn').addEventListener('click', () => {
+      localStorage.setItem("selectedCard", JSON.stringify(card));
+      window.location.href = "cardDetail.html";
+    });
+
+    container.appendChild(cardElement);
+  });
+}
+
+  
   function setupPagination() {
     pagination.innerHTML = "";
     const totalPages = Math.ceil(cardData.length / cardsPerPage);
