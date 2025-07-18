@@ -393,7 +393,7 @@ label:not(.form-check-label):not(.custom-file-label) {
     color: #fff;
 }
 .navbar-right button i{
-    color: #d55a5a;
+    color: #ae2d2d;
     margin-top: 2px;
 }
 .navbar-right button:hover i{
@@ -682,5 +682,5 @@ label:not(.form-check-label):not(.custom-file-label) {
 
 .check-count{
     margin-left: 8px;
-    color: #cf6537;
+    color: #ae2d2d;
 }
