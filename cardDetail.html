@@ -123,8 +123,8 @@
 
                                     <!-- Quality -->
                                     <div class="quality-btn">
-                                        <button class="view-detail-btn btn btn-link" id="qualityBtn"
-                                            data-toggle="modal" data-target="#qualityModal">Quality</button>
+                                        <button class="view-detail-btn btn btn-link" id="qualityBtn" data-toggle="modal"
+                                            data-target="#qualityModal">Quality</button>
                                         <span class="ms-2" id="qualityText"></span>
                                     </div>
                                 </div>
@@ -203,10 +203,12 @@
                 <div class="col-lg-6 m-auto">
                     <div class="footer-btn d-flex justify-content-between">
                         <div>
-                            <button type="button" class="btn button-apply" data-toggle="modal" data-target="#logModal">Logs</button>
+                            <button type="button" class="btn button-apply" data-toggle="modal"
+                                data-target="#logModal">Logs</button>
                         </div>
                         <div>
-                            <button type="button" class="btn button-close" data-toggle="modal" data-target="#closeDialog">Close</button>
+                            <button type="button" class="btn button-close" data-toggle="modal"
+                                data-target="#closeDialog">Close</button>
                         </div>
                     </div>
                 </div>
@@ -220,7 +222,10 @@
 
 
         <footer class="main-footer">
-            Copyright &copy; 2025 <strong><a href="">Brickkly Real Estate Solutions</a></strong>. All Rights Reserved.
+            <div class="container">
+                Copyright &copy; 2025 <strong><a href="">Brickkly Real Estate Solutions</a></strong>. All Rights
+                Reserved.
+            </div>
         </footer>
     </div>
 
@@ -390,9 +395,10 @@
                 </div>
 
                 <!-- Footer -->
-                <div class="modal-footer d-flex justify-content-end" >
+                <div class="modal-footer d-flex justify-content-end">
                     <div>
-                        <button onclick="setFollowUpDate()" data-dismiss="modal" class="btn button-apply">Submit</button>
+                        <button onclick="setFollowUpDate()" data-dismiss="modal"
+                            class="btn button-apply">Submit</button>
                     </div>
                 </div>
 
@@ -418,7 +424,7 @@
                 </div>
 
                 <!-- Body -->
-                 <div class="modal-body">
+                <div class="modal-body">
                     <label class="custom-radio">
                         <input type="radio" name="quality" value="Cold" />
                         <span class="checkmark"></span>
@@ -437,9 +443,9 @@
                 </div>
 
                 <!-- Footer -->
-                <div class="modal-footer d-flex justify-content-end" >
+                <div class="modal-footer d-flex justify-content-end">
                     <div>
-                        <button data-dismiss="modal" class="btn button-apply" onclick="setQuality()" >Submit</button>
+                        <button data-dismiss="modal" class="btn button-apply" onclick="setQuality()">Submit</button>
                     </div>
                 </div>
 
@@ -523,74 +529,75 @@
 
 
     <!-- close dialog -->
-<div class="modal fade" id="closeDialog" tabindex="-1" role="dialog" aria-labelledby="closeDialogLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered progress-popup-full" role="document">
-    <div class="modal-content p-2">
-      
-      <!-- Header -->
-      <div class="modal-header">
-        <h5 class="modal-title" id="closeDialogLabel">Closing Status</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+    <div class="modal fade" id="closeDialog" tabindex="-1" role="dialog" aria-labelledby="closeDialogLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered progress-popup-full" role="document">
+            <div class="modal-content p-2">
 
-      <!-- Body -->
-       <div class="modal-body">
-            <label class="custom-radio">
-                <input type="radio" name="quality" value="Cold" />
-                <span class="checkmark"></span>
-                Closing tag 1
-                <span class="check-count">[ 12 ]</span>
-            </label>
-            <label class="custom-radio">
-                <input type="radio" name="quality" value="Cold" />
-                <span class="checkmark"></span>
-                Closing tag 2
-                <span class="check-count">[ 12 ]</span>
-            </label>
-            <label class="custom-radio">
-                <input type="radio" name="quality" value="Cold" />
-                <span class="checkmark"></span>
-                Closing tag 3
-                <span class="check-count">[ 12 ]</span>
-            </label>
-            <label class="custom-radio">
-                <input type="radio" name="quality" value="Cold" />
-                <span class="checkmark"></span>
-                Closing tag 4
-                <span class="check-count">[ 12 ]</span>
-            </label>
-            <label class="custom-radio">
-                <input type="radio" name="quality" value="Cold" />
-                <span class="checkmark"></span>
-                Closing tag 5
-                <span class="check-count">[ 12 ]</span>
-            </label>
-            <label class="custom-radio">
-                <input type="radio" name="quality" value="Cold" />
-                <span class="checkmark"></span>
-                Closing tag 6
-                <span class="check-count">[ 12 ]</span>
-            </label>
-            <label class="custom-radio">
-                <input type="radio" name="quality" value="Cold" />
-                <span class="checkmark"></span>
-                Closing tag 7
-                <span class="check-count">[ 12 ]</span>
-            </label>
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="closeDialogLabel">Closing Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Closing tag 1
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Closing tag 2
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Closing tag 3
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Closing tag 4
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Closing tag 5
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Closing tag 6
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Closing tag 7
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer d-flex justify-content-end">
+                    <div>
+                        <button type="button" class="btn button-apply">Submit</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-      <!-- Footer -->
-      <div class="modal-footer d-flex justify-content-end">
-        <div>
-          <button type="button" class="btn button-apply">Submit</button>
-        </div>
-      </div>
-
     </div>
-  </div>
-</div>
 
 
 
@@ -611,10 +618,10 @@
 
 
 
-<!-- Flatpickr CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<!-- Flatpickr JS -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
 
@@ -644,29 +651,29 @@
 
 
 
-<script>
-  const fp = flatpickr("#calendar", {
-    mode: "range",
-    inline: true,
-    dateFormat: "Y-m-d",
-    onChange: function(selectedDates, dateStr, instance) {
-      if (selectedDates.length === 2) {
-        const formatDate = (date) => {
-          const year = date.getFullYear();
-          const month = String(date.getMonth() + 1).padStart(2, '0');
-          const day = String(date.getDate()).padStart(2, '0');
-          return `${year}-${month}-${day}`;
-        };
+    <script>
+        const fp = flatpickr("#calendar", {
+            mode: "range",
+            inline: true,
+            dateFormat: "Y-m-d",
+            onChange: function (selectedDates, dateStr, instance) {
+                if (selectedDates.length === 2) {
+                    const formatDate = (date) => {
+                        const year = date.getFullYear();
+                        const month = String(date.getMonth() + 1).padStart(2, '0');
+                        const day = String(date.getDate()).padStart(2, '0');
+                        return `${year}-${month}-${day}`;
+                    };
 
-        const from = formatDate(selectedDates[0]);
-        const to = formatDate(selectedDates[1]);
+                    const from = formatDate(selectedDates[0]);
+                    const to = formatDate(selectedDates[1]);
 
-        document.getElementById("followupBtn").innerHTML =
-          `<i class="bi bi-calendar-event"></i> ${from} to ${to}`;
-      }
-    }
-  });
-</script>
+                    document.getElementById("followupBtn").innerHTML =
+                        `<i class="bi bi-calendar-event"></i> ${from} to ${to}`;
+                }
+            }
+        });
+    </script>
 
 
 
