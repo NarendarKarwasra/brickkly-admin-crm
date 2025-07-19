@@ -201,8 +201,6 @@
 
 
 
-
-
   <!-- add new dialog -->
   <div class="modal fade" id="addDialog" tabindex="-1" role="dialog" aria-labelledby="addDialogLabel"
     aria-hidden="true">
@@ -261,7 +259,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="d-flex align-items-center mb-3 area-input-row position-relative">
               <div class="row-text">Price</div>
               <div class="dropdown-custom">
@@ -293,8 +291,6 @@
       </div>
     </div>
   </div>
-
-
 
 
 
@@ -483,7 +479,8 @@
       location: `Location ${i + 1}`,
       time: `Thu 17 July 2025 | 05:15 AM`,
       phone: `98765432${(10 + i).toString().slice(-2)}`,
-      area: `${4000 + i * 100} sqft`
+      area: `${4000 + i * 100} sqft`,
+      assigned: false
     }));
 
     const cardsPerPage = 12;
@@ -544,6 +541,28 @@
       </div>
     `;
 
+        // assign assined things
+        const assignBtn = cardElement.querySelector('.card-footer button:first-child');
+
+        // initial button state
+        if (card.assigned) {
+          assignBtn.textContent = 'ASSIGNED';
+          assignBtn.classList.add('btn-assigned');
+        } else {
+          assignBtn.textContent = 'ASSIGN';
+          assignBtn.classList.remove('btn-assigned');
+        }
+
+        // click toggle event
+        assignBtn.addEventListener('click', () => {
+          card.assigned = !card.assigned;
+          assignBtn.textContent = card.assigned ? 'ASSIGNED' : 'ASSIGN';
+          assignBtn.classList.toggle('btn-assigned', card.assigned);
+        });
+
+
+
+
         // Add click event for VIEW DETAIL
         cardElement.querySelector('.view-detail-btn').addEventListener('click', () => {
           localStorage.setItem("selectedCard", JSON.stringify(card));
@@ -602,32 +621,32 @@
 
 
 
-<!-- dropdown -->
+  <!-- dropdown -->
 
-<script>
-  function toggleDropdown(element) {
-    const dropdown = element.nextElementSibling;
-    dropdown.classList.toggle('d-none');
-  }
+  <script>
+    function toggleDropdown(element) {
+      const dropdown = element.nextElementSibling;
+      dropdown.classList.toggle('d-none');
+    }
 
-  function selectOption(option) {
-    const value = option.innerText;
-    const toggle = option.closest('.dropdown-custom').querySelector('.dropdown-toggle-custom span');
-    toggle.innerText = value;
+    function selectOption(option) {
+      const value = option.innerText;
+      const toggle = option.closest('.dropdown-custom').querySelector('.dropdown-toggle-custom span');
+      toggle.innerText = value;
 
-    // Hide dropdown after selection
-    option.parentElement.classList.add('d-none');
-  }
+      // Hide dropdown after selection
+      option.parentElement.classList.add('d-none');
+    }
 
-  // Optional: close dropdowns when clicking outside
-  document.addEventListener('click', function (e) {
-    document.querySelectorAll('.dropdown-custom').forEach(drop => {
-      if (!drop.contains(e.target)) {
-        drop.querySelector('.dropdown-menu-custom').classList.add('d-none');
-      }
+    // Optional: close dropdowns when clicking outside
+    document.addEventListener('click', function (e) {
+      document.querySelectorAll('.dropdown-custom').forEach(drop => {
+        if (!drop.contains(e.target)) {
+          drop.querySelector('.dropdown-menu-custom').classList.add('d-none');
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 
 

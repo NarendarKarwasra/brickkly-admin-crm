@@ -274,21 +274,27 @@ label:not(.form-check-label):not(.custom-file-label) {
 
 .card-footer button,
 .card-footer a {
-    background: #cfa1a1;
+    background: #f5f2f2;
     border: none;
     border-radius: 2px;
     padding: 6px 10px;
     color: #2a2a2a;
     font-size: 14px;
     transition: all 0.2s ease-in-out;
-    box-shadow: -2px 2px 4px -2px #686868;
+    /* box-shadow: -2px 2px 4px -2px #686868; */
 }
 
 .card-footer button:hover,
 .card-footer a:hover {
-    background: #ae2d2d;
-    color: #fff;
+    background: #d7b1b1;
+    color: #000;
 }
+
+.btn-assigned {
+    background-color: #e37474 !important;
+    color: #fff !important;
+}
+
 
 
 
@@ -399,39 +405,47 @@ label:not(.form-check-label):not(.custom-file-label) {
 /* add new dialog dropdown */
 
 .dropdown-custom {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
+
 .dropdown-toggle-custom {
-  background: #fff;
-  border: 1px solid #ced4da;
-  padding: 6px 10px;
-  border-radius: 0.25rem;
-  cursor: pointer;
+    background: #fff;
+    border: 1px solid #ced4da;
+    padding: 6px 10px;
+    border-radius: 0.25rem;
+    cursor: pointer;
 }
-.dropdown-toggle-custom i{
-    font-size: 12px;
-    color: #ae2d2d;    
+
+.dropdown-toggle-custom i {
+    font-size: 12px !important;
+    margin-top: 4px;
+    color: #ae2d2d;
 }
+
+
 .dropdown-menu-custom {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: #f4e7e7;
-  border: 1px solid #ced4da;
-  z-index: 1000;
-  border-radius: 0.25rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f4e7e7;
+    border: 1px solid #ced4da;
+    z-index: 1000;
+    border-radius: 0.25rem;
 }
+
 .area-input-row .row-text {
     width: 195px;
 }
+
 .dropdown-item-custom {
-  padding: 8px 10px;
-  cursor: pointer;
+    padding: 8px 10px;
+    cursor: pointer;
 }
+
 .dropdown-item-custom:hover {
-  background-color: rgb(228, 138, 138);
+    background-color: rgb(228, 138, 138);
 }
 
 

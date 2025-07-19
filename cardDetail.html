@@ -170,6 +170,16 @@
         </div>
 
 
+
+        <!-- <div class="content">
+            <div class="container">
+                <div class="col-lg-6">
+                    <i class="bi bi-arrow-clockwise"></i>
+                </div> 
+            </div>
+        </div> -->
+
+
         <div class="content">
             <div class="container">
                 <div class="col-lg-6 m-auto">
@@ -236,6 +246,7 @@
 
 
 
+
     <!-- Filter Dialog -->
     <!-- Modal -->
     <div class="modal fade" id="filterDialog" tabindex="-1" role="dialog" aria-labelledby="filterDialogLabel"
@@ -270,15 +281,22 @@
                             <i class="bi bi-calendar-check-fill mr-2"></i>
                             <input type="text" class="form-control rounded" placeholder="Follow Update">
                         </div>
+
                         <div class="d-flex align-items-center mb-3">
                             <i class="bi bi-person-badge-fill mr-2"></i>
-                            <select class="form-control rounded">
-                                <option selected disabled>Lead Assign To</option>
-                                <option>Admin 1</option>
-                                <option>Admin 2</option>
-                                <option>Admin 3</option>
-                            </select>
+                            <div class="dropdown-custom">
+                                <div class="dropdown-toggle-custom form-control rounded" onclick="toggleDropdown(this)">
+                                    <span>Lead Assign To</span>
+                                    <i class="bi bi-chevron-down float-end"></i>
+                                </div>
+                                <div class="dropdown-menu-custom d-none">
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">Admin 1</div>
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">Admin 2</div>
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">Admin 3</div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -296,6 +314,7 @@
             </div>
         </div>
     </div>
+
 
 
 
@@ -318,43 +337,62 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="d-flex align-items-center mb-3 input-row">
-                            <div>Name</div>
+                            <div class="row-text">Name</div>
                             <input type="text" class="form-control rounded" placeholder="Enter Your Name">
                         </div>
                         <div class="d-flex align-items-center mb-3 input-row">
-                            <div>Mobile No.</div>
+                            <div class="row-text">Mobile No.</div>
                             <input type="text" class="form-control rounded" placeholder="Enter Your Mobile No.">
                         </div>
                         <div class="d-flex align-items-center mb-3 input-row">
-                            <div>Preferred Location</div>
+                            <div class="row-text">Preferred Location</div>
                             <input type="text" class="form-control rounded" placeholder="Enter Preferred Location">
                         </div>
-                        <div class="d-flex align-items-center mb-3 input-row">
-                            <div>Property Type</div>
-                            <select class="form-control rounded">
-                                <option selected disabled>Select Property Type</option>
-                                <option>Commercial</option>
-                                <option>Residential</option>
-                            </select>
+
+                        <div class="d-flex align-items-center mb-3 area-input-row position-relative">
+                            <div class="row-text">Property Type</div>
+                            <div class="dropdown-custom">
+                                <div class="dropdown-toggle-custom form-control rounded" onclick="toggleDropdown(this)">
+                                    <span>Select Property Type</span>
+                                    <i class="bi bi-chevron-down float-end"></i>
+                                </div>
+                                <div class="dropdown-menu-custom d-none">
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">Commercial</div>
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">Residential</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex align-items-center mb-3 input-row">
-                            <div>Area (sqft)</div>
-                            <select class="form-control rounded">
-                                <option selected disabled>Select Area</option>
-                                <option>500 - 1000</option>
-                                <option>1000 - 2500</option>
-                                <option>2500+</option>
-                            </select>
+
+                        <div class="d-flex align-items-center mb-3 area-input-row position-relative">
+                            <div class="row-text">Area (sqft)</div>
+                            <div class="dropdown-custom">
+                                <div class="dropdown-toggle-custom form-control rounded" onclick="toggleDropdown(this)">
+                                    <span>Select Area</span>
+                                    <i class="bi bi-chevron-down float-end"></i>
+                                </div>
+                                <div class="dropdown-menu-custom d-none">
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">500 - 1000</div>
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">1000 - 2500</div>
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">2500+</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex align-items-center mb-3 input-row">
-                            <div>Price</div>
-                            <select class="form-control rounded">
-                                <option selected disabled>Select Price</option>
-                                <option>Under 1 Cr</option>
-                                <option>1 Cr - 3 Cr</option>
-                                <option>3 Cr+</option>
-                            </select>
+
+                        <div class="d-flex align-items-center mb-3 area-input-row position-relative">
+                            <div class="row-text">Price</div>
+                            <div class="dropdown-custom">
+                                <div class="dropdown-toggle-custom form-control rounded" onclick="toggleDropdown(this)">
+                                    <span>Select Price</span>
+                                    <i class="bi bi-chevron-down float-end"></i>
+                                </div>
+                                <div class="dropdown-menu-custom d-none">
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">Under 1 Cr</div>
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">1 Cr - 3 Cr</div>
+                                    <div class="dropdown-item-custom" onclick="selectOption(this)">3 Cr+</div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -371,6 +409,7 @@
             </div>
         </div>
     </div>
+
 
 
 
@@ -723,6 +762,32 @@
     </script>
 
 
+
+    <!-- dropdown -->
+    <script>
+        function toggleDropdown(element) {
+            const dropdown = element.nextElementSibling;
+            dropdown.classList.toggle('d-none');
+        }
+
+        function selectOption(option) {
+            const value = option.innerText;
+            const toggle = option.closest('.dropdown-custom').querySelector('.dropdown-toggle-custom span');
+            toggle.innerText = value;
+
+            // Hide dropdown after selection
+            option.parentElement.classList.add('d-none');
+        }
+
+        // Optional: close dropdowns when clicking outside
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('.dropdown-custom').forEach(drop => {
+                if (!drop.contains(e.target)) {
+                    drop.querySelector('.dropdown-menu-custom').classList.add('d-none');
+                }
+            });
+        });
+    </script>
 
 
 </body>
