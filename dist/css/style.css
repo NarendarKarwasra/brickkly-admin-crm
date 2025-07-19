@@ -566,29 +566,48 @@ label:not(.form-check-label):not(.custom-file-label) {
 .calendar-body {
     margin: auto;
 }
-
-.calendar-body label {
-    margin: auto;
+.calendar-body div {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin-top: 4px;
+}
+.calendar-body label{
+    width: 100px;
+}
+.input-group span {
+    height: 40px;
+    background: #f5e9e9 !important;
+}
+.input-group input {
+    height: 40px;
+    background: #f5e9e9 !important;
 }
 
 
+.quality-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-.quality-btn button {
-    background: #cfa1a1;
+.quality-btn .btn {
+    background: #e8dada;
     border: none;
-    border-radius: 2px;
-    padding: 4px 14px;
+    border-radius: 30px !important;
+    padding: 1px 10px;
     color: #1a1a1a;
-    font-size: 16px;
+    font-size: 15px;
+    cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
-.quality-btn button:hover {
-    background: #ae2d2d;
-    color: #fff;
+.quality-btn .btn:hover {
+    background: #dfbfbf;
+}
+
+.btn-check:checked+.btn {
+    background-color: #d15454;
+    color: white;
 }
 
 
@@ -598,6 +617,26 @@ label:not(.form-check-label):not(.custom-file-label) {
 
 
 
+.refresh-comment-margin {
+    margin-top: 10px;
+}
+
+.refresh-comment-margin span {
+    color: #ae2d2d;
+    margin-right: 10px;
+}
+
+.refresh-comment-margin .refresh-back {
+    background: #e8dada;
+    padding: 3px 6px 0 6px;
+    border-radius: 4px;
+    border: none;
+}
+
+.refresh-comment-margin i {
+    font-size: 20px;
+    color: #ae2d2d;
+}
 
 
 
@@ -811,4 +850,19 @@ tr {
     height: 5px;
     border-radius: 50%;
     background: white;
+}
+
+
+
+
+
+
+
+@media (max-width: 500px) {
+
+    .follow-quality-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
 }

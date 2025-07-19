@@ -122,10 +122,18 @@
                                     </div>
 
                                     <!-- Quality -->
-                                    <div class="quality-btn">
-                                        <button class="view-detail-btn btn btn-link" id="qualityBtn" data-toggle="modal"
-                                            data-target="#qualityModal">Quality</button>
-                                        <span class="ms-2" id="qualityText"></span>
+                                    <div class="quality-btn btn-group" role="group" aria-label="Quality Options">
+                                        <input type="radio" class="btn-check" name="quality" id="cold"
+                                            autocomplete="off" />
+                                        <label class="btn" for="cold">Cold</label>
+
+                                        <input type="radio" class="btn-check" name="quality" id="hot"
+                                            autocomplete="off" />
+                                        <label class="btn" for="hot">Hot</label>
+
+                                        <input type="radio" class="btn-check" name="quality" id="warm"
+                                            autocomplete="off" />
+                                        <label class="btn" for="warm">Warm</label>
                                     </div>
                                 </div>
 
@@ -171,16 +179,19 @@
 
 
 
-        <!-- <div class="content">
+        <div class="content refresh-comment-margin">
             <div class="container">
-                <div class="col-lg-6">
-                    <i class="bi bi-arrow-clockwise"></i>
-                </div> 
+                <div class="col-lg-6 m-auto d-flex align-items-center justify-content-end">
+                    <span>Refreshed At 05:45:12 AM</span>
+                    <button class="refresh-back">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
             </div>
-        </div> -->
+        </div>
 
 
-        <div class="content">
+        <div class="content refresh-comment-margin">
             <div class="container">
                 <div class="col-lg-6 m-auto">
                     <div class="card card-detail">
@@ -429,9 +440,26 @@
 
                 <!-- Body -->
                 <div class="modal-body calendar-body">
-                    <label>Select Date Range</label>
-                    <div id="calendar" class="mb-2"></div>
+                    <div>
+                        <label for="fromDateTime">From:</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">
+                            <i class="bi bi-calendar-event"></i>
+                            </span>
+                            <input type="text" id="fromDateTime" class="form-control" placeholder="Select start date and time" />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="toDateTime">To:</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">
+                                <i class="bi bi-calendar-event"></i>
+                            </span>
+                            <input type="text" id="toDateTime" class="form-control" placeholder="Select end date and time" />
+                        </div>
+                    </div>
                 </div>
+
 
                 <!-- Footer -->
                 <div class="modal-footer d-flex justify-content-end">
@@ -689,29 +717,31 @@
     </script>
 
 
-
+    <!-- select date and time for foolow up button -->
     <script>
-        const fp = flatpickr("#calendar", {
-            mode: "range",
-            inline: true,
-            dateFormat: "Y-m-d",
-            onChange: function (selectedDates, dateStr, instance) {
-                if (selectedDates.length === 2) {
-                    const formatDate = (date) => {
-                        const year = date.getFullYear();
-                        const month = String(date.getMonth() + 1).padStart(2, '0');
-                        const day = String(date.getDate()).padStart(2, '0');
-                        return `${year}-${month}-${day}`;
-                    };
-
-                    const from = formatDate(selectedDates[0]);
-                    const to = formatDate(selectedDates[1]);
-
-                    document.getElementById("followupBtn").innerHTML =
-                        `<i class="bi bi-calendar-event"></i> ${from} to ${to}`;
-                }
-            }
+        flatpickr("#fromDateTime", {
+            enableTime: true,
+            dateFormat: "d-m-Y H:i",
+            time_24hr: true,
+            minTime: "09:00"
         });
+
+        flatpickr("#toDateTime", {
+            enableTime: true,
+            dateFormat: "d-m-Y H:i",
+            time_24hr: true,
+            minTime: "09:00"
+        });
+
+        function setFollowUpDate() {
+            const from = document.getElementById("fromDateTime").value;
+            const to = document.getElementById("toDateTime").value;
+
+            if (from && to) {
+            document.getElementById("followupBtn").innerHTML =
+                `<i class="bi bi-calendar-event"></i> ${from} to ${to}`;
+            }
+        }
     </script>
 
 
@@ -719,6 +749,8 @@
 
 
 
+
+    <!-- choose file and show in comment detail -->
     <script>
         const fileInput = document.getElementById("fileInput");
         const fileLabel = document.getElementById("fileLabel");
@@ -785,6 +817,15 @@
                 if (!drop.contains(e.target)) {
                     drop.querySelector('.dropdown-menu-custom').classList.add('d-none');
                 }
+            });
+        });
+    </script>
+
+    <!-- cold, hot, warm radio buttons -->
+    <script>
+        document.querySelectorAll('input[name="quality"]').forEach((input) => {
+            input.addEventListener('change', function () {
+                document.getElementById('qualityText').textContent = this.id.charAt(0).toUpperCase() + this.id.slice(1);
             });
         });
     </script>
