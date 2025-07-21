@@ -1,3 +1,8 @@
+body {
+    padding: 0 !important;
+}
+
+
 .navbar-nav {
     margin-left: 40px;
     align-items: center;
@@ -213,6 +218,7 @@ label:not(.form-check-label):not(.custom-file-label) {
 .card {
     overflow: hidden;
     border: 1px solid #f4edeb;
+    margin-bottom: 15px !important;
 }
 
 .card-body {
@@ -248,6 +254,10 @@ label:not(.form-check-label):not(.custom-file-label) {
     border: none;
     font-weight: 500;
     font-size: 14px;
+}
+
+.card-head-right button:hover {
+    background: #cacaca;
 }
 
 
@@ -542,8 +552,8 @@ label:not(.form-check-label):not(.custom-file-label) {
 /* card detail page css */
 
 
-.top-card {
-    margin-bottom: 0;
+.top-card .card {
+    margin-bottom: 0 !important;
 }
 
 .follow-quality-row {
@@ -566,24 +576,30 @@ label:not(.form-check-label):not(.custom-file-label) {
 .date-popup-full {
     width: 400px;
 }
+
 .calendar-body {
     margin: auto;
     width: 100%;
 }
+
 .calendar-body i {
     color: #bb4c1c;
 }
+
 .input-group span {
     height: 46px;
     background: #ffffff !important;
 }
+
 .input-group input {
     height: 46px;
     background: #ffffff !important;
 }
+
 .form-control {
     border: 1px solid #d4d4d4;
 }
+
 .input-group-text {
     border: 1px solid #d4d4d4;
 }
@@ -866,6 +882,27 @@ tr {
 
 
 
+.btn-assigned-status {
+    background-color: #a0cfab !important;
+    color: #3d3d3d !important;
+}
+
+.btn-assigned-status:hover {
+    color: #4e4e4e;
+}
+
+.btn-nonContactable {
+    background-color: #e5a5ab !important;
+    color: white;
+}
+
+.btn-default {
+    background-color: #dbdbdb !important;
+    color: white;
+}
+
+
+
 
 
 @media (max-width: 500px) {
@@ -879,7 +916,7 @@ tr {
 
 
     .log-body {
-    padding: 2px;
+        padding: 2px;
     }
 
     .log-body .log-row {

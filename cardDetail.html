@@ -21,10 +21,6 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <!-- Bootstrap JS Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
 
 
     <!-- Theme style -->
@@ -42,19 +38,19 @@
                     <img src="../../dist/img/logo.png" alt="AdminLTE Logo" class="brand-image">
                 </a>
 
-                <button class="navbar-toggler order-1" type="button" data-toggle="collapse"
-                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                <button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse order-3" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <button data-toggle="modal" data-target="#filterDialog">Filter<i
+                        <button data-bs-toggle="modal" data-bs-target="#filterDialog">Filter<i
                                 class="bi bi-sort-down"></i></button>
-                        <button data-toggle="modal" data-target="#addDialog">Add New<i
+                        <button data-bs-toggle="modal" data-bs-target="#addDialog">Add New<i
                                 class="bi bi-building-add"></i></button>
-                        <button>Download Excel<i class="bi bi-box-arrow-down"></i></button>
+                        <button id="downloadExcelBtn">Download Excel <i class="bi bi-box-arrow-down"></i></button>
                     </div>
 
                     <div class="ml-auto navbar-right">
@@ -77,8 +73,8 @@
         <div class="content">
             <div class="container">
                 <div class="row" id="card-container">
-                    <div class="col-lg-6 m-auto">
-                        <div class="card card-detail top-card">
+                    <div class="col-lg-6 m-auto top-card">
+                        <div class="card card-detail">
                             <div class="card-body">
 
                                 <div class="card-head">
@@ -87,7 +83,8 @@
                                         <h5 class="card-title mb-0" id="time"></h5>
                                     </div>
                                     <div class="card-head-right">
-                                        <button>STATUS</button>
+                                        <button type="button" class="btn button-close" id="statusBtn"
+                                            data-bs-toggle="modal" data-bs-target="#statusDialog">STATUS</button>
                                     </div>
                                 </div>
 
@@ -115,10 +112,13 @@
                                 <div class="follow-quality-row">
                                     <!-- follow up date -->
                                     <div class="follow-btn">
-                                        <button id="followupBtn" data-toggle="modal" data-target="#followupModal">
-                                            <i class="bi bi-calendar-event"></i> Follow Up Date
+                                        <button id="followupBtn" data-bs-toggle="modal" data-bs-target="#followupModal">
+                                            <i class="bi bi-calendar-event"></i>
+                                            <span id="followupBtnText">Follow Up Date</span>
                                         </button>
-                                        <span class="ms-2" id="followupDateText"></span>
+
+                                        <span class="d-none" id="followupDateText"></span>
+
                                     </div>
 
                                     <!-- Quality -->
@@ -150,18 +150,15 @@
             </div>
         </div>
 
-
         <div class="content">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 m-auto">
+                    <div class="col-lg-6 m-auto top-card">
                         <div class="card card-detail">
                             <div class="card-body">
-
                                 <div class="comment-card">
                                     <textarea class="form-control mb-2" id="commentBox"
                                         placeholder="Enter your comment..."></textarea>
-
                                     <div class="d-flex gap-2">
                                         <button class="btn btn-outline-secondary file-btn" id="fileBtn">
                                             <i class="bi bi-paperclip"></i>
@@ -171,7 +168,6 @@
                                         <button class="btn" id="saveBtn">Save</button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -198,7 +194,7 @@
         <div class="content refresh-comment-margin">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 m-auto">
+                    <div class="col-lg-6 m-auto top-card">
                         <div class="card card-detail">
                             <div class="card-body">
 
@@ -231,23 +227,18 @@
                     <div class="col-lg-6 m-auto">
                         <div class="footer-btn d-flex justify-content-between">
                             <div>
-                                <button type="button" class="btn button-apply" data-toggle="modal"
-                                    data-target="#logModal">Logs</button>
+                                <button type="button" class="btn button-apply" data-bs-toggle="modal"
+                                    data-bs-target="#logModal">Logs</button>
                             </div>
                             <div>
-                                <button type="button" class="btn button-close" data-toggle="modal"
-                                    data-target="#closeDialog">Close</button>
+                                <button type="button" class="btn button-close" data-bs-toggle="modal"
+                                    data-bs-target="#closeDialog">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
 
 
         <footer class="main-footer">
@@ -276,7 +267,7 @@
                 <!-- Header -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="filterDialogLabel">Filters</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -322,7 +313,7 @@
                 <!-- Footer -->
                 <div class="modal-footer d-flex justify-content-between">
                     <div>
-                        <button type="button" class="btn button-close" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn button-close" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn button-clear">Clear Filter</button>
                     </div>
                     <div>
@@ -344,7 +335,7 @@
                 <!-- Header -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="addDialogLabel">Add New Form</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -415,7 +406,7 @@
                 <!-- Footer -->
                 <div class="modal-footer d-flex justify-content-between">
                     <div>
-                        <button type="button" class="btn button-close" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn button-close" data-bs-dismiss="modal">Close</button>
                     </div>
                     <div>
                         <button type="button" class="btn button-apply">Submit</button>
@@ -436,7 +427,7 @@
                 <!-- Header -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="followDialogLabel">Select Follow Up Date</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -447,9 +438,10 @@
                         <label for="fromDateTime">From:</label>
                         <div class="input-group mb-2">
                             <span class="input-group-text">
-                            <i class="bi bi-calendar-event"></i>
+                                <i class="bi bi-calendar-event"></i>
                             </span>
-                            <input type="text" id="fromDateTime" class="form-control" placeholder="Select Start Date and Time" />
+                            <input type="text" id="fromDateTime" class="form-control"
+                                placeholder="Select Start Date and Time" />
                         </div>
                     </div>
                     <div>
@@ -458,7 +450,8 @@
                             <span class="input-group-text">
                                 <i class="bi bi-calendar-event"></i>
                             </span>
-                            <input type="text" id="toDateTime" class="form-control" placeholder="Select End Date and Time" />
+                            <input type="text" id="toDateTime" class="form-control"
+                                placeholder="Select End Date and Time" />
                         </div>
                     </div>
                 </div>
@@ -467,7 +460,7 @@
                 <!-- Footer -->
                 <div class="modal-footer d-flex justify-content-end">
                     <div>
-                        <button onclick="setFollowUpDate()" data-dismiss="modal"
+                        <button onclick="setFollowUpDate()" data-bs-dismiss="modal"
                             class="btn button-apply">Submit</button>
                     </div>
                 </div>
@@ -486,7 +479,7 @@
                 <!-- Header -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="logDialogLabel">Lead Logs</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -557,7 +550,7 @@
                 <!-- Header -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="closeDialogLabel">Closing Status</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -620,6 +613,76 @@
     </div>
 
 
+    <!-- status dialog -->
+    <div class="modal fade" id="statusDialog" tabindex="-1" role="dialog" aria-labelledby="statusDialogLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered progress-popup-full" role="document">
+            <div class="modal-content p-2">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="statusDialogLabel">Closing Status</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Assigned
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Non-Contactable
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        First Follow up
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Detail Shared
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Detail Explained
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Zoom Meet Aligned
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="quality" value="Cold" />
+                        <span class="checkmark"></span>
+                        Zoom Meet Done
+                        <span class="check-count">[ 12 ]</span>
+                    </label>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer d-flex justify-content-end">
+                    <button type="button" class="btn button-apply" id="submitStatus">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
 
 
 
@@ -628,20 +691,19 @@
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <!-- <script src="../../dist/js/demo.js"></script> -->
-
-
-
 
     <!-- Flatpickr CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- sheetJS for download excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 
     <!-- card data -->
     <script>
@@ -665,6 +727,7 @@
         }
 
     </script>
+
     <!-- select date and time for foolow up button -->
     <script>
         flatpickr("#fromDateTime", {
@@ -684,17 +747,15 @@
             const to = document.getElementById("toDateTime").value;
 
             if (from && to) {
-            document.getElementById("followupBtn").innerHTML =
-                `<i class="bi bi-calendar-event"></i> ${from} to ${to}`;
+                const formattedRange = `${from} to ${to}`;
+                document.getElementById("followupBtnText").textContent = formattedRange;
+                document.getElementById("followupDateText").textContent = formattedRange;
             }
         }
+
+
+
     </script>
-
-
-
-
-
-
 
     <!-- choose file and show in comment detail -->
     <script>
@@ -739,8 +800,6 @@
         });
     </script>
 
-
-
     <!-- dropdown -->
     <script>
         function toggleDropdown(element) {
@@ -775,6 +834,106 @@
             });
         });
     </script>
+
+    <!-- status bytton -->
+    <script>
+        document.getElementById('submitStatus').addEventListener('click', function () {
+            const radios = document.querySelectorAll('input[name="quality"]');
+            let selectedText = '';
+
+            radios.forEach(function (radio) {
+                if (radio.checked) {
+                    const label = radio.closest('label');
+                    selectedText = label.textContent.replace(/\[\s*\d+\s*\]/g, '').trim();
+                }
+            });
+
+            if (selectedText) {
+                const statusBtn = document.getElementById('statusBtn');
+                statusBtn.textContent = selectedText;
+
+                statusBtn.classList.remove('btn-assigned-status', 'btn-nonContactable', 'btn-default');
+
+                if (selectedText === 'Assigned') {
+                    statusBtn.classList.add('btn-assigned-status');
+                } else if (selectedText === 'Non-Contactable') {
+                    statusBtn.classList.add('btn-nonContactable');
+                } else {
+                    statusBtn.classList.add('btn-default');
+                }
+
+                // ✅ Proper Bootstrap 5 way to close modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('statusDialog'));
+                if (modal) modal.hide();
+            }
+        });
+    </script>
+
+
+    <!-- download excel -->
+    <script>
+        document.getElementById('downloadExcelBtn').addEventListener('click', function () {
+            const name = document.getElementById('name').textContent.trim();
+            const phone = document.getElementById('phone').textContent.trim();
+            const location = document.getElementById('location').textContent.trim();
+            const area = document.getElementById('area').textContent.trim();
+            const time = document.getElementById('time').textContent.trim();
+            const followUpDate = document.getElementById('followupBtnText')?.textContent.trim() || '';
+
+            // for Quality
+            const quality = document.querySelector('input[name="quality"]:checked');
+            const qualityValue = quality ? document.querySelector(`label[for="${quality.id}"]`).innerText : '';
+
+            // for status from button text
+            const status = document.getElementById('statusBtn')?.textContent.trim() || '';
+
+            const assignTo = "Any Name";
+
+            const rows = document.querySelectorAll('#commentTableBody tr');
+            const data = [];
+
+            if (rows.length === 0) {
+                data.push({
+                    Name: name,
+                    Phone: phone,
+                    Location: location,
+                    Area: area,
+                    Time: time,
+                    Status: status,
+                    'Follow Up Date': followUpDate,
+                    Quality: qualityValue,
+                    'Assign To': assignTo,
+                    Comment: '',
+                    Attachment: ''
+                });
+            } else {
+                rows.forEach(row => {
+                    const comment = row.cells[1]?.innerText.trim();
+                    const attachment = row.cells[2]?.innerText.trim();
+                    data.push({
+                        Name: name,
+                        Phone: phone,
+                        Location: location,
+                        Area: area,
+                        Time: time,
+                        Status: status,
+                        'Follow Up Date': followUpDate,
+                        Quality: qualityValue,
+                        'Assign To': assignTo,
+                        Comment: comment,
+                        Attachment: attachment
+                    });
+                });
+            }
+            const worksheet = XLSX.utils.json_to_sheet(data);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "User Data");
+            XLSX.writeFile(workbook, "user_data.xlsx");
+        });
+
+    </script>
+
+
 
 
 </body>
