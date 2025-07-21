@@ -863,6 +863,21 @@ tr {
     .follow-quality-row {
         flex-direction: column;
         gap: 10px;
+        align-items: flex-start;
     }
+
+
+
+    .log-body {
+    padding: 2px;
+}
+
+.log-body .log-row {
+    flex-direction: column;
+}
+
+.log-body .log-row:first-child {
+    margin-bottom: 2px;
+}
 
 }
