@@ -563,24 +563,29 @@ label:not(.form-check-label):not(.custom-file-label) {
     padding-right: 10px;
 }
 
+.date-popup-full {
+    width: 400px;
+}
 .calendar-body {
     margin: auto;
+    width: 100%;
 }
-.calendar-body div {
-    display: flex;
-    align-items: center;
-    margin-top: 4px;
-}
-.calendar-body label{
-    width: 100px;
+.calendar-body i {
+    color: #bb4c1c;
 }
 .input-group span {
-    height: 40px;
-    background: #f5e9e9 !important;
+    height: 46px;
+    background: #ffffff !important;
 }
 .input-group input {
-    height: 40px;
-    background: #f5e9e9 !important;
+    height: 46px;
+    background: #ffffff !important;
+}
+.form-control {
+    border: 1px solid #d4d4d4;
+}
+.input-group-text {
+    border: 1px solid #d4d4d4;
 }
 
 
@@ -612,6 +617,9 @@ label:not(.form-check-label):not(.custom-file-label) {
 
 
 
+.card {
+    margin-bottom: 0;
+}
 
 
 
@@ -648,6 +656,7 @@ textarea {
 .file-btn {
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .file-btn input[type="file"] {
@@ -655,7 +664,6 @@ textarea {
     left: 0;
     top: 0;
     opacity: 0;
-    cursor: pointer;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -671,18 +679,20 @@ textarea {
 }
 
 .comment-card .file-btn {
-    background: #dbcece;
+    background: #d6d6d6;
     border: none;
+    color: #474747;
+    cursor: pointer;
 }
 
 .comment-card .file-btn:hover {
-    background: #ae2d2d;
-    color: #fff;
+    background: #b1b1b1;
+    color: #474747;
 }
 
 .comment-card #saveBtn {
-    background: #cfa1a1;
-    color: #1a1a1a;
+    background: #d55a5a;
+    color: #fff;
     border: none;
 }
 
@@ -870,14 +880,14 @@ tr {
 
     .log-body {
     padding: 2px;
-}
+    }
 
-.log-body .log-row {
-    flex-direction: column;
-}
+    .log-body .log-row {
+        flex-direction: column;
+    }
 
-.log-body .log-row:first-child {
-    margin-bottom: 2px;
-}
+    .log-body .log-row:first-child {
+        margin-bottom: 2px;
+    }
 
 }

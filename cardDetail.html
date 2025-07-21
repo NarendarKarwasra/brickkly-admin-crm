@@ -153,24 +153,26 @@
 
         <div class="content">
             <div class="container">
-                <div class="col-lg-6 m-auto">
-                    <div class="card card-detail">
-                        <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6 m-auto">
+                        <div class="card card-detail">
+                            <div class="card-body">
 
-                            <div class="comment-card">
-                                <textarea class="form-control mb-2" id="commentBox"
-                                    placeholder="Enter your comment..."></textarea>
+                                <div class="comment-card">
+                                    <textarea class="form-control mb-2" id="commentBox"
+                                        placeholder="Enter your comment..."></textarea>
 
-                                <div class="d-flex gap-2">
-                                    <button class="btn btn-outline-secondary file-btn" id="fileBtn">
-                                        <i class="bi bi-paperclip"></i>
-                                        <span id="fileLabel">Choose Files</span>
-                                        <input type="file" id="fileInput" multiple />
-                                    </button>
-                                    <button class="btn btn-primary" id="saveBtn">Save</button>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-secondary file-btn" id="fileBtn">
+                                            <i class="bi bi-paperclip"></i>
+                                            <span id="fileLabel">Choose Files</span>
+                                            <input type="file" id="fileInput" multiple />
+                                        </button>
+                                        <button class="btn" id="saveBtn">Save</button>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -181,11 +183,13 @@
 
         <div class="content refresh-comment-margin">
             <div class="container">
-                <div class="col-lg-6 m-auto d-flex align-items-center justify-content-end">
-                    <span>Refreshed At 05:45:12 AM</span>
-                    <button class="refresh-back">
-                        <i class="bi bi-arrow-clockwise"></i>
-                    </button>
+                <div class="row">
+                    <div class="col-lg-6 m-auto d-flex align-items-center justify-content-end">
+                        <span>Refreshed At 05:45:12 AM</span>
+                        <button class="refresh-back">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -193,24 +197,26 @@
 
         <div class="content refresh-comment-margin">
             <div class="container">
-                <div class="col-lg-6 m-auto">
-                    <div class="card card-detail">
-                        <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6 m-auto">
+                        <div class="card card-detail">
+                            <div class="card-body">
 
-                            <!-- Comment Table -->
-                            <div class="comment-table">
-                                <table class="table table-striped border-0">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Comment</th>
-                                            <th>Attachment</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="commentTableBody"></tbody>
-                                </table>
+                                <!-- Comment Table -->
+                                <div class="comment-table">
+                                    <table class="table table-striped border-0">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Comment</th>
+                                                <th>Attachment</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="commentTableBody"></tbody>
+                                    </table>
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -221,15 +227,17 @@
 
         <div class="content">
             <div class="container">
-                <div class="col-lg-6 m-auto">
-                    <div class="footer-btn d-flex justify-content-between">
-                        <div>
-                            <button type="button" class="btn button-apply" data-toggle="modal"
-                                data-target="#logModal">Logs</button>
-                        </div>
-                        <div>
-                            <button type="button" class="btn button-close" data-toggle="modal"
-                                data-target="#closeDialog">Close</button>
+                <div class="row">
+                    <div class="col-lg-6 m-auto">
+                        <div class="footer-btn d-flex justify-content-between">
+                            <div>
+                                <button type="button" class="btn button-apply" data-toggle="modal"
+                                    data-target="#logModal">Logs</button>
+                            </div>
+                            <div>
+                                <button type="button" class="btn button-close" data-toggle="modal"
+                                    data-target="#closeDialog">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -327,9 +335,6 @@
     </div>
 
 
-
-
-
     <!-- add new dialog -->
     <div class="modal fade" id="addDialog" tabindex="-1" role="dialog" aria-labelledby="addDialogLabel"
         aria-hidden="true">
@@ -422,12 +427,10 @@
     </div>
 
 
-
-
     <!-- follow up date dialog -->
     <div class="modal fade" id="followupModal" tabindex="-1" role="dialog" aria-labelledby="followDialogLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered date-popup-full" role="document">
             <div class="modal-content p-2">
 
                 <!-- Header -->
@@ -446,7 +449,7 @@
                             <span class="input-group-text">
                             <i class="bi bi-calendar-event"></i>
                             </span>
-                            <input type="text" id="fromDateTime" class="form-control" placeholder="Select start date and time" />
+                            <input type="text" id="fromDateTime" class="form-control" placeholder="Select Start Date and Time" />
                         </div>
                     </div>
                     <div>
@@ -455,7 +458,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-calendar-event"></i>
                             </span>
-                            <input type="text" id="toDateTime" class="form-control" placeholder="Select end date and time" />
+                            <input type="text" id="toDateTime" class="form-control" placeholder="Select End Date and Time" />
                         </div>
                     </div>
                 </div>
@@ -472,56 +475,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-    <!-- quality dialog -->
-    <div class="modal fade" id="qualityModal" tabindex="-1" role="dialog" aria-labelledby="qualityDialogLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered progress-popup-full" role="document">
-            <div class="modal-content p-2">
-
-                <!-- Header -->
-                <div class="modal-header">
-                    <h5 class="modal-title" id="qualityDialogLabel">Select Quality</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-                <!-- Body -->
-                <div class="modal-body">
-                    <label class="custom-radio">
-                        <input type="radio" name="quality" value="Cold" />
-                        <span class="checkmark"></span>
-                        Cold
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="quality" value="Hot" />
-                        <span class="checkmark"></span>
-                        Hot
-                    </label>
-                    <label class="custom-radio">
-                        <input type="radio" name="quality" value="Warm" />
-                        <span class="checkmark"></span>
-                        Warm
-                    </label>
-                </div>
-
-                <!-- Footer -->
-                <div class="modal-footer d-flex justify-content-end">
-                    <div>
-                        <button data-dismiss="modal" class="btn button-apply" onclick="setQuality()">Submit</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
 
 
     <!-- log dialog -->
@@ -690,9 +643,6 @@
     <!-- Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-
-
-
     <!-- card data -->
     <script>
         const card = JSON.parse(localStorage.getItem("selectedCard"));
@@ -715,8 +665,6 @@
         }
 
     </script>
-
-
     <!-- select date and time for foolow up button -->
     <script>
         flatpickr("#fromDateTime", {
@@ -725,14 +673,12 @@
             time_24hr: true,
             minTime: "09:00"
         });
-
         flatpickr("#toDateTime", {
             enableTime: true,
             dateFormat: "d-m-Y H:i",
             time_24hr: true,
             minTime: "09:00"
         });
-
         function setFollowUpDate() {
             const from = document.getElementById("fromDateTime").value;
             const to = document.getElementById("toDateTime").value;
